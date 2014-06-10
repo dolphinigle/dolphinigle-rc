@@ -38,9 +38,12 @@ syntax on
 
 autocmd filetype cpp nnoremap <F4> :w <bar> exec '!g++ -std=c++11 '.shellescape('%').' -o '.shellescape('%:r')<CR>
 autocmd filetype cpp nnoremap <F5> :w <bar> exec '!./'.shellescape('%:r')<CR>
-autocmd filetype cpp nnoremap <F3> :w <bar> exec '!g++ -g '.shellescape('%').' -o '.shellescape('%:r') <bar> Cfile %:r<CR>
+autocmd filetype cpp nnoremap <F3> :w <bar> exec '!g++ -std=c++11 -g '.shellescape('%').' -o '.shellescape('%:r') <bar> Cfile %:r<CR>
 
 autocmd filetype python nnoremap <F5> :w <bar> exec '!python '.shellescape('%')<CR>
+
+autocmd filetype tex nnoremap <F4> :w <bar> exec '!pdflatex '.shellescape('%')<CR>
+autocmd filetype tex nnoremap <F5> :w <bar> exec '!okular '.shellescape('%:r').'.pdf'<CR>
 
 fun! Clewn()
   Pyclewn
